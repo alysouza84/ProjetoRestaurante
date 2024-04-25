@@ -1,24 +1,50 @@
 package edu.up.br;
 
+import java.util.Scanner;
+
 public class Main
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        /*
-        Cadastro:
-        - Cliente: nome, telefone, endereço, e-mail. (Irá criar arquivo com os dados do cliente, nome do arquivo clientes.txt);
-        - Funcionário: nome, telefone, endereço, e-mail, cargo, salário. (Irá criar arquivo com os dados do funcionário, nome do arquivo funcionarios.txt);
-        - Cardápio: nome, descrição, preço. (Irá criar arquivo com os dados do cardápio, nome do arquivo cardapio.txt);
-        - Pedido: cliente, funcionário, cardápio, data, hora, quantidade. (Não terá arquivo, apenas será exibido na tela);
-        - Reserva: cliente, data, hora, quantidade de pessoas. (Não terá arquivo, apenas será exibido na tela).
-        O sistema deve permitir:
-        - Cadastrar clientes, funcionários, cardápio, pedidos e reserva de mesas.
-        - Listar clientes, funcionários, cardápio, pedidos e reserva de mesas.
-        - Excluir clientes, funcionários, cardápio, pedidos e reserva de mesas.
-        - Atualizar clientes, funcionários, cardápio, pedidos e reserva de mesas.
-        - Pesquisar clientes, funcionários, cardápio, pedidos e reserva de mesas.
-        */
+        //menu do restaurante
+        Boolean sair = true;
+
+        do {
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            System.out.println("Bem vindo ao restaurante LUCAL!");
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            System.out.println("O que você precisa fazer: ");
+            System.out.println("1 - Cadastrar/Apagar (Cliente, Funcionário, Cardápio)");
+            System.out.println("2 - Fazer Reserva.");
+            System.out.println("3 - Fazer Pedido.");
+            System.out.println("4 - Fechar Conta de Mesa.");
+            System.out.println("5 - Sair.");
+
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("1 - Cadastrar/Apagar (Cliente, Funcionário, Cardápio)");
+                    break;
+                case 2:
+                    System.out.println("2 - Fazer Reserva.");
+                    break;
+                case 3:
+                    System.out.println("3 - Fazer Pedido.");
+                    break;
+                case 4:
+                    System.out.println("4 - Fechar Conta de Mesa.");
+                    break;
+                case 5:
+                    System.out.println("5 - Sair.");
+                    sair = false;
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } while (sair);
+
 
     }
 }
