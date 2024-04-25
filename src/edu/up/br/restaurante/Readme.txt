@@ -2,7 +2,7 @@ Projeto de Gerenciamento de Restaurante.
         O projeto consiste em um sistema de gerenciamento de um restaurante,
         onde é possível cadastrar clientes, funcionários, cardápio, pedidos e reserva de mesas.
 
-        Cadastro:
+        Cadastro (Adicionar/Remover/Pesquisar/Listar/Listar Todos de maneira ordenada) de:
         - Cliente: nome, telefone, endereço, e-mail.
             (Irá criar arquivo com os dados do cliente, nome do arquivo clientes.txt);
 
