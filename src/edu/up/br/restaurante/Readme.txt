@@ -24,3 +24,8 @@ Projeto de Gerenciamento de Restaurante.
         - Excluir clientes, funcionários, cardápio, pedidos e reserva de mesas.
         - Atualizar clientes, funcionários, cardápio, pedidos e reserva de mesas.
         - Pesquisar clientes, funcionários, cardápio, pedidos e reserva de mesas.
+
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-
+        Ordenar o que for feito no arquivo TXT;
+        Tem que ter métodos estáticos;
+        -=-=-=-=-=-=-=-=-=-=-=-=-=-
