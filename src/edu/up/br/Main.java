@@ -2,6 +2,7 @@ package edu.up.br;
 
 import edu.up.br.restaurante.Cardapio;
 import edu.up.br.restaurante.Cliente;
+import edu.up.br.restaurante.FileManager;
 import edu.up.br.restaurante.Funcionario;
 
 import java.io.IOException;
@@ -18,6 +19,8 @@ public class Main
         boolean sair = true;
 
         do {
+            System.out.print("\033[H\033[2J\033[3J");
+            System.out.flush();
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             System.out.println("Bem vindo ao restaurante LUCAL!");
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
@@ -37,20 +40,20 @@ public class Main
                     Pedidos();
                     break;
                 case 2:
-                    Clientes();
-                    break;
-                case 3:
-                    Funcionarios();
-                    break;
-                case 4:
-                    Cardapios();
-                    break;
-                case 5:
-                    Listagem();
-                    break;
-                case 6:
-                    Pesquisar();
-                    break;
+//                    Clientes();
+//                    break;
+//                case 3:
+//                    Funcionarios();
+//                    break;
+//                case 4:
+//                    Cardapios();
+//                    break;
+//                case 5:
+//                    Listagem();
+//                    break;
+//                case 6:
+//                    Pesquisar();
+//                    break;
                 case 7:
                     System.out.println("5 - Sair.");
                     sair = false;
@@ -66,10 +69,11 @@ public class Main
 
     //metodo que chama os metodos de pedidos e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-    public static void Pedidos()
-    {
+    public static void Pedidos() throws IOException {
         boolean Voltar = true;
         do{
+            System.out.print("\033[H\033[2J\033[3J");
+            System.out.flush();
             System.out.println("\n       Pedidos:    \n\n");
             System.out.println("1 - Cadastrar Pedido.");
             System.out.println("2 - Fechar Conta.");
@@ -81,29 +85,29 @@ public class Main
             int opcao = scanner.nextInt();
 
             switch (opcao)
-            {
-                case 1:
-                    Pedidos.cadastrarPedido(scanner);
-                    break;
-                case 2:
-                    Pedidos.fecharConta();
-                    break;
-                case 3:
-                    Pedidos.modificarPedido();
-                    break;
-                case 4:
-                    Pedidos.cancelarPedido();
-                    break;
-                case 5:
-                    Pedidos.listarPedidos();
-                    break;
-                case 6:
-                    Voltar = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-            }
-        } while (Voltar);
+//            {
+//                case 1:
+//                    Pedidos.cadastrarPedido(scanner);
+//                    break;
+//                case 2:
+//                    Pedidos.fecharConta();
+//                    break;
+//                case 3:
+//                    Pedidos.modificarPedido();
+//                    break;
+//                case 4:
+//                    Pedidos.cancelarPedido();
+//                    break;
+//                case 5:
+//                    Pedidos.listarPedidos();
+//                    break;
+//                case 6:
+//                    Voltar = false;
+//                    break;
+//                default:
+//                    System.out.println("Opção inválida.");
+//            }
+//        } while (Voltar);
     }
 
 
@@ -112,6 +116,8 @@ public class Main
     public static void Clientes() throws IOException {
         boolean Voltar = true;
         do{
+            System.out.print("\033[H\033[2J\033[3J");
+            System.out.flush();
             System.out.println("\n       Cadastros:    \n\n");
             System.out.println("1 - Cadastrar Cliente.");
             System.out.println("2 - Atualizar cliente.");
@@ -128,7 +134,7 @@ public class Main
                     Cliente.cadastrarCliente(scanner);
                     break;
                 case 2:
-                    Clientes.atualizarCliente();
+                    Cliente.atualizarCliente(scanner);
                     break;
                 case 3:
                     Clientes.removerCliente();
@@ -150,6 +156,8 @@ public class Main
     public static void Funcionarios() throws IOException {
         boolean Voltar = true;
         do{
+            System.out.print("\033[H\033[2J\033[3J");
+            System.out.flush();
             System.out.println("\n       Cadastros:    \n\n");
             System.out.println("1 - Cadastrar Funcionario.");
             System.out.println("2 - Atualizar Funcionario.");

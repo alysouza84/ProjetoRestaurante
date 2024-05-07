@@ -105,4 +105,9 @@ public class Funcionario {
         arquivo.gravarFuncionarios(funcionario);
 
     }
+
+    public void imprimirDadosFuncionarios()
+    {
+
+    }
 }

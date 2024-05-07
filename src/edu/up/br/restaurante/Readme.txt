@@ -17,7 +17,7 @@ Projeto de Gerenciamento de Restaurante.
         - Mesa: numero da mesa, status, pedido vinculado, quantidade de pessoas e reserva;
         (nao precisa de gerenciamento como cadastro, sera um valor fixo de mesas, ex 10;
 
-        - Pedido:funcionario, mesa, comida e quantidade, bebida e quantidade.
+        - Pedido: funcionario, mesa, comida e quantidade, bebida e quantidade.
             (Não terá arquivo, apenas será exibido na tela);
 
         - Conta: cliente, total parcial, fechar conta.
