@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public class Main
 {
+    //metodo geral do scanner, o final impede que seja alterado e que seja acessado por outra classe
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
         //menu do restaurante que chama os metodos de submenus
         // pedidos, cadastros, listagem e pesquisar;
@@ -47,7 +48,7 @@ public class Main
                     System.out.println("Opção inválida.");
             }
         } while (!sair);
-
+        scanner.close();
 
     }
 
@@ -64,7 +65,6 @@ public class Main
             System.out.println("4 - Cancelar Pedido.");
             System.out.println("5 - Voltar.");
 
-            Scanner scanner = new Scanner(System.in);
             int opcao = scanner.nextInt();
 
             switch (opcao)
@@ -92,6 +92,7 @@ public class Main
                 default:
                     System.out.println("Opção inválida.");
             }
+            scanner.close();
         } while (Voltar);
     }
 
@@ -108,7 +109,6 @@ public class Main
             System.out.println("3 - Cadastrar Pedido.");
             System.out.println("4 - Voltar.");
 
-            Scanner scanner = new Scanner(System.in);
             int opcao = scanner.nextInt();
 
             switch (opcao)
@@ -152,7 +152,6 @@ public class Main
             System.out.println("5 - Listar Mesas.");
             System.out.println("6 - Voltar.");
 
-            Scanner scanner = new Scanner(System.in);
             int opcao = scanner.nextInt();
 
             switch (opcao)
@@ -196,7 +195,6 @@ public class Main
             System.out.println("5 - Pesquisar Mesa.");
             System.out.println("6 - Voltar.");
 
-            Scanner scanner = new Scanner(System.in);
             int opcao = scanner.nextInt();
 
             switch (opcao)
