@@ -4,13 +4,15 @@ import java.util.Scanner;
 
 public class Main
 {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         Scanner scanner = new Scanner(System.in);
 
         //menu do restaurante
         Boolean sair = true;
 
-        do {
+        do
+        {
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             System.out.println("Bem vindo ao restaurante LUCAL!");
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
@@ -23,9 +25,11 @@ public class Main
 
             int opcao = scanner.nextInt();
 
-            switch (opcao) {
+            switch (opcao)
+            {
                 case 1:
                     System.out.println("1 - Cadastrar/Apagar (Cliente, Funcionário, Cardápio)");
+
                     break;
                 case 2:
                     System.out.println("2 - Fazer Reserva.");
@@ -44,6 +48,7 @@ public class Main
                     System.out.println("Opção inválida.");
             }
         } while (sair);
+
 
 
     }

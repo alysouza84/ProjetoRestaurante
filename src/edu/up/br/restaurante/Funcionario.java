@@ -1,17 +1,27 @@
 package edu.up.br.restaurante;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Funcionario {
 
     private static int count = 0;
-    private int id_funcionario;
-    private String nome;
-    private String cargo;
+    public int id_funcionario;
+    public String nome;
+    public String telefone;
+    public String endereco;
+    public String email;
+    public String cargo;
+    public String salario;
 
-    public Funcionario(int id_funcionario, String nome, String cargo)
-    {
-        this.id_funcionario = ++count;
+
+    public Funcionario(String nome, String telefone, String endereco, String email, String cargo, String salario) {
         this.nome = nome;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.email = email;
         this.cargo = cargo;
+        this.salario = salario;
     }
 
     public int getId_funcionario() {
@@ -30,6 +40,30 @@ public class Funcionario {
         this.nome = nome;
     }
 
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getCargo() {
         return cargo;
     }
@@ -38,10 +72,36 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
-    public void cadastrarFuncionario()
-    {
-        System.out.println();
+    public String getSalario() {
+        return salario;
+    }
 
+    public void setSalario(String salario) {
+        this.salario = salario;
+    }
+
+    public void cadastrarFuncionario() throws IOException {
+        FileManager arquivo = new FileManager();
+        arquivo.criarDiretorioGeral();
+        arquivo.criarArquivoFuncionarios();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o nome do funcionário: ");
+        String nome = scanner.next();
+        System.out.println("Digite o telefone do funcionário: ");
+        String telefone = scanner.next();
+        System.out.println("Digite o endereço do funcionário: ");
+        String endereco = scanner.next();
+        System.out.println("Digite o email do funcionário: ");
+        String email = scanner.next();
+        System.out.println("Digite o cargo do funcionário: ");
+        String cargo = scanner.next();
+        System.out.println("Digite o salário do funcionário: ");
+        String salario = scanner.next();
+
+        Funcionario funcionario = new Funcionario(nome, telefone, endereco, email, cargo, salario);
+
+        arquivo.gravarFuncionarios(funcionario);
 
     }
 }
