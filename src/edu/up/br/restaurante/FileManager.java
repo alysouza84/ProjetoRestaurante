@@ -50,9 +50,9 @@ public class FileManager
         {
             String[] dados = line.split(";");
             var name = dados[0];
-            var telefone = new String(dados[1]);
-            var endereco = new String(dados[2]);
-            var email = new String(dados[3]);
+            var telefone = dados[1];
+            var endereco = dados[2];
+            var email = dados[3];
 
             //Instancia um novo cliente com os dados lidos do arquivo;
             Cliente cliente = new Cliente(name, telefone, endereco, email);
@@ -97,4 +97,72 @@ public class FileManager
         printWriter.flush();
         printWriter.close();
     }
+
+    public void atualizaCliente(Cliente cliente) throws IOException {
+        File arquivo = new File(pathName, "clientes.txt");
+        File arquivoTemp = new File(pathName, "clientesTemp.txt");
+        FileReader reader = new FileReader(arquivo);
+        BufferedReader bufferedReader = new BufferedReader(reader);
+        FileWriter fileWriter = new FileWriter(arquivoTemp, true);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+            String[] dados = line.split(";");
+            if (dados[0].equals(cliente.name)) {
+                printWriter.print(cliente.name);
+                printWriter.print(";");
+                printWriter.print(cliente.telefone);
+                printWriter.print(";");
+                printWriter.print(cliente.endereco);
+                printWriter.print(";");
+                printWriter.print(cliente.email);
+                printWriter.print("\n");
+            } else {
+                printWriter.print(dados[0]);
+                printWriter.print(";");
+                printWriter.print(dados[1]);
+                printWriter.print(";");
+                printWriter.print(dados[2]);
+                printWriter.print(";");
+                printWriter.print(dados[3]);
+                printWriter.print("\n");
+            }
+        }
+        printWriter.flush();
+        printWriter.close();
+        bufferedReader.close();
+        reader.close();
+        arquivo.delete();
+        arquivoTemp.renameTo(arquivo);
+    }
+
+    public void exlcluirCliente(Cliente cliente) throws IOException {
+        File arquivo = new File(pathName, "clientes.txt");
+        File arquivoTemp = new File(pathName, "clientesTemp.txt");
+        FileReader reader = new FileReader(arquivo);
+        BufferedReader bufferedReader = new BufferedReader(reader);
+        FileWriter fileWriter = new FileWriter(arquivoTemp, true);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+            String[] dados = line.split(";");
+            if (!dados[0].equals(cliente.name)) {
+                printWriter.print(dados[0]);
+                printWriter.print(";");
+                printWriter.print(dados[1]);
+                printWriter.print(";");
+                printWriter.print(dados[2]);
+                printWriter.print(";");
+                printWriter.print(dados[3]);
+                printWriter.print("\n");
+            }
+        }
+        printWriter.flush();
+        printWriter.close();
+        bufferedReader.close();
+        reader.close();
+        arquivo.delete();
+        arquivoTemp.renameTo(arquivo);
+    }
+
 }
