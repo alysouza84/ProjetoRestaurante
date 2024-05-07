@@ -2,6 +2,7 @@ package edu.up.br.restaurante;
 
 
 import java.io.IOException;
+
 import java.util.Scanner;
 
 public class Cliente
@@ -66,7 +67,7 @@ public class Cliente
         this.email = email;
     }
 
-    public void cadastrarCliente() throws IOException {
+    public static void cadastrarCliente(final Scanner scanner) throws IOException {
         //Cria arquivo usando a classe FileManager;
         FileManager arquivo = new FileManager();
 
@@ -74,8 +75,9 @@ public class Cliente
         arquivo.criarDiretorioGeral();
         arquivo.criarArquivoClientes();
 
+        //eu trouxe o scanner da main para ca, mas o metodo ser static da problema com o id;
+
         //Solicita ao usuário que informe os dados do cliente;
-        Scanner scanner = new Scanner(System.in);
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Digite o nome do cliente: ");
         String name = scanner.next();

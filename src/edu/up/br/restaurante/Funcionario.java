@@ -80,12 +80,13 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public void cadastrarFuncionario() throws IOException {
+    public static void cadastrarFuncionario(final Scanner scanner) throws IOException {
         FileManager arquivo = new FileManager();
         arquivo.criarDiretorioGeral();
         arquivo.criarArquivoFuncionarios();
 
-        Scanner scanner = new Scanner(System.in);
+        //eu trouxe o scanner da main para cá
+
         System.out.println("Digite o nome do funcionário: ");
         String nome = scanner.next();
         System.out.println("Digite o telefone do funcionário: ");
