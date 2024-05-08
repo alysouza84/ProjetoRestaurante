@@ -1,6 +1,6 @@
 package edu.up.br;
 
-import edu.up.br.restaurante.Cardapio;
+//import edu.up.br.restaurante.Cliente;
 import edu.up.br.restaurante.CardapioManager;
 //import edu.up.br.restaurante.FileManager;
 //import edu.up.br.restaurante.Funcionario;
