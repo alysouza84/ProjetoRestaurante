@@ -85,11 +85,12 @@ public class Funcionario {
         arquivo.criarArquivoFuncionarios();
 
         System.out.println("Digite o nome do funcionário: ");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         System.out.println("Digite o telefone do funcionário: ");
         String telefone = scanner.next();
+        scanner.nextLine();
         System.out.println("Digite o endereço do funcionário: ");
-        String endereco = scanner.next();
+        String endereco = scanner.nextLine();
         System.out.println("Digite o email do funcionário: ");
         String email = scanner.next();
         System.out.println("Digite o cargo do funcionário: ");
@@ -137,11 +138,12 @@ public class Funcionario {
 
     public static void atualizarFuncionario(Scanner scanner) throws IOException {
         System.out.println("Digite o nome do funcionário que deseja atualizar: ");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         System.out.println("Digite o telefone do funcionário: ");
         String telefone = scanner.next();
+        scanner.nextLine();
         System.out.println("Digite o endereço do funcionário: ");
-        String endereco = scanner.next();
+        String endereco = scanner.nextLine();
         System.out.println("Digite o email do funcionário: ");
         String email = scanner.next();
         System.out.println("Digite o cargo do funcionário: ");
