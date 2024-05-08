@@ -1,6 +1,5 @@
 package edu.up.br;
 
-import edu.up.br.restaurante.Cardapio;
 import edu.up.br.restaurante.Cliente;
 import edu.up.br.restaurante.FileManager;
 import edu.up.br.restaurante.Funcionario;
@@ -12,13 +11,14 @@ public class Main
 {
     //metodo geral do scanner, o final impede que seja alterado e que seja acessado por outra classe
     private static final Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException
+    {
 
         //menu do restaurante que chama os metodos de submenus
         // pedidos, cadastros, listagem e pesquisar;
         boolean sair = true;
 
-        do {
+        while (sair) {
             System.out.print("\033[H\033[2J\033[3J");
             System.out.flush();
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
@@ -37,24 +37,24 @@ public class Main
             int opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1:
-                    Pedidos();
-                    break;
+//                case 1:
+//                    Pedidos();
+//                    break;
                 case 2:
-//                    Clientes();
-//                    break;
-//                case 3:
-//                    Funcionarios();
-//                    break;
-//                case 4:
+                    Clientes();
+                    break;
+                case 3:
+                    Funcionarios();
+                    break;
+                case 4:
 //                    Cardapios();
-//                    break;
-//                case 5:
+                    break;
+                case 5:
 //                    Listagem();
-//                    break;
-//                case 6:
+                    break;
+                case 6:
 //                    Pesquisar();
-//                    break;
+                    break;
                 case 7:
                     System.out.println("5 - Sair.");
                     sair = false;
@@ -62,30 +62,28 @@ public class Main
                 default:
                     System.out.println("Opção inválida.");
             }
-        } while (!sair);
-
+        }
         scanner.close();
-
     }
 
     //metodo que chama os metodos de pedidos e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-    public static void Pedidos() throws IOException {
-        boolean Voltar = true;
-        do{
-            System.out.print("\033[H\033[2J\033[3J");
-            System.out.flush();
-            System.out.println("\n       Pedidos:    \n\n");
-            System.out.println("1 - Cadastrar Pedido.");
-            System.out.println("2 - Fechar Conta.");
-            System.out.println("3 - Modificar Pedido.");
-            System.out.println("4 - Cancelar Pedido.");
-            System.out.println("5 - Listar Pedidos.");
-            System.out.println("6 - Voltar.");
-
-            int opcao = scanner.nextInt();
-
-            switch (opcao)
+//    public static void Pedidos() throws IOException {
+//        boolean Voltar = true;
+//        do{
+//            System.out.print("\033[H\033[2J\033[3J");
+//            System.out.flush();
+//            System.out.println("\n       Pedidos:    \n\n");
+//            System.out.println("1 - Cadastrar Pedido.");
+//            System.out.println("2 - Fechar Conta.");
+//            System.out.println("3 - Modificar Pedido.");
+//            System.out.println("4 - Cancelar Pedido.");
+//            System.out.println("5 - Listar Pedidos.");
+//            System.out.println("6 - Voltar.");
+//
+//            int opcao = scanner.nextInt();
+//
+//            switch (opcao)
 //            {
 //                case 1:
 //                    Pedidos.cadastrarPedido(scanner);
@@ -109,16 +107,17 @@ public class Main
 //                    System.out.println("Opção inválida.");
 //            }
 //        } while (Voltar);
-    }
+//    }
 
 
     //metodo que chama os metodos de cadastros e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-    public static void Clientes() throws IOException {
+    public static void Clientes() throws IOException
+    {
         boolean Voltar = true;
-        do{
-            System.out.print("\033[H\033[2J\033[3J");
-            System.out.flush();
+        while(Voltar){
+//            System.out.print("\033[H\033[2J\033[3J");
+//            System.out.flush();
             System.out.println("\n       Cadastros:    \n\n");
             System.out.println("1 - Cadastrar Cliente.");
             System.out.println("2 - Atualizar cliente.");
@@ -138,27 +137,28 @@ public class Main
                     Cliente.atualizarCliente(scanner);
                     break;
                 case 3:
-                    Clientes.removerCliente();
+                    Cliente.deletarCliente(scanner);
                     break;
                 case 4:
-                    Clientes.listarClientes();
+                    Cliente.listarClientes();
                     break;
                 case 5:
-                    Clientes.pesquisarCliente();
+                    Cliente.buscarCliente(scanner);
+                    break;
                 case 6:
                     Voltar = false;
                     break;
                 default:
                     System.out.println("Opção inválida.");
             }
-        } while (Voltar);
+        }
     }
 
     public static void Funcionarios() throws IOException {
         boolean Voltar = true;
-        do{
-            System.out.print("\033[H\033[2J\033[3J");
-            System.out.flush();
+        while(Voltar){
+//            System.out.print("\033[H\033[2J\033[3J");
+//            System.out.flush();
             System.out.println("\n       Cadastros:    \n\n");
             System.out.println("1 - Cadastrar Funcionario.");
             System.out.println("2 - Atualizar Funcionario.");
@@ -174,16 +174,16 @@ public class Main
                     Funcionario.cadastrarFuncionario(scanner);
                     break;
                 case 2:
-                    Funcionario.removerFuncionario();
+                    Funcionario.removerFuncionario(scanner);
                     break;
                 case 3:
-                    Funcionario.modificarFuncionario();
+                    Funcionario.atualizarFuncionario(scanner);
                     break;
                 case 4:
                     Funcionario.listarFuncionarios();
                     break;
                 case 5:
-                    Funcionario.pesquisarFuncionario();
+                    Funcionario.pesquisarFuncionario(scanner);
                     break;
                 case 6:
                     Voltar = false;
@@ -191,128 +191,128 @@ public class Main
                 default:
                     System.out.println("Opção inválida.");
             }
-        } while (Voltar);
+        }
     }
 
-    public static void Cardapios(){
-        boolean Voltar = true;
-        do{
-            System.out.println("\n       Cardapio:    \n\n");
-            System.out.println("1 - Cadastrar Prato.");
-            System.out.println("2 - Atualizar Prato.");
-            System.out.println("3 - Excluir Prato.");
-            System.out.println("4 - Listar Pratos.");
-            System.out.println("5 - Voltar.");
-
-            int opcao = scanner.nextInt();
-
-            switch (opcao)
-            {
-                case 1:
-                    Cardapio.cadastrarProduto(scanner);
-                    break;
-                case 2:
-                    Cardapio.removerProduto();
-                    break;
-                case 3:
-                    Cardapio.modificarProduto();
-                    break;
-                case 4:
-                    Cardapio.listarProdutos();
-                    break;
-                case 5:
-                    Cardapio.pesquisarProduto();
-                    break;
-                case 6:
-                    Voltar = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-            }
-        } while (Voltar);
-    }
+//    public static void Cardapios(){
+//        boolean Voltar = true;
+//        do{
+//            System.out.println("\n       Cardapio:    \n\n");
+//            System.out.println("1 - Cadastrar Prato.");
+//            System.out.println("2 - Atualizar Prato.");
+//            System.out.println("3 - Excluir Prato.");
+//            System.out.println("4 - Listar Pratos.");
+//            System.out.println("5 - Voltar.");
+//
+//            int opcao = scanner.nextInt();
+//
+//            switch (opcao)
+//            {
+//                case 1:
+//                    Cardapio.cadastrarProduto(scanner);
+//                    break;
+//                case 2:
+//                    Cardapio.removerProduto();
+//                    break;
+//                case 3:
+//                    Cardapio.modificarProduto();
+//                    break;
+//                case 4:
+//                    Cardapio.listarProdutos();
+//                    break;
+//                case 5:
+//                    Cardapio.pesquisarProduto();
+//                    break;
+//                case 6:
+//                    Voltar = false;
+//                    break;
+//                default:
+//                    System.out.println("Opção inválida.");
+//            }
+//        } while (Voltar);
+//    }
 
     //metodo que chama os metodos de listagem e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-    public static void Listagem()
-    {
-        boolean Voltar = true;
-        do{
-            System.out.println("\n       Listagem:    \n\n");
-            System.out.println("1 - Listar Pedidos.");
-            System.out.println("2 - Listar Clientes.");
-            System.out.println("3 - Listar Funcionarios.");
-            System.out.println("4 - Listar Cardapio.");
-            System.out.println("5 - Listar Mesas.");
-            System.out.println("6 - Voltar.");
+//    public static void Listagem()
+//    {
+//        boolean Voltar = true;
+//        do{
+//            System.out.println("\n       Listagem:    \n\n");
+//            System.out.println("1 - Listar Pedidos.");
+//            System.out.println("2 - Listar Clientes.");
+//            System.out.println("3 - Listar Funcionarios.");
+//            System.out.println("4 - Listar Cardapio.");
+//            System.out.println("5 - Listar Mesas.");
+//            System.out.println("6 - Voltar.");
+//
+//            int opcao = scanner.nextInt();
+//
+//            switch (opcao)
+//            {
+//                case 1:
+//                    Pedido.listarPedidos();
+//                    break;
+//                case 2:
+//                    FileManager.lerClientes();
+//                    break;
+//                case 3:
+//                    Funcionario.listarFuncionarios();
+//                    break;
+//                case 4:
+//                    cardapio.listarCardapio();
+//                    break;
+//                case 5:
+//                    cardapio.listarMesas();
+//                    break;
+//                case 6:
+//                    System.out.println("6 - Voltar.");
+//                    Voltar = false;
+//                    break;
+//                default:
+//                    System.out.println("Opção inválida.");
+//            }
+//        } while (Voltar);
+//    }
 
-            int opcao = scanner.nextInt();
-
-            switch (opcao)
-            {
-                case 1:
-                    Pedido.listarPedidos();
-                    break;
-                case 2:
-                    Cliente.listarClientes();
-                    break;
-                case 3:
-                    Funcionario.listarFuncionarios();
-                    break;
-                case 4:
-                    cardapio.listarCardapio();
-                    break;
-                case 5:
-                    cardapio.listarMesas();
-                    break;
-                case 6:
-                    System.out.println("6 - Voltar.");
-                    Voltar = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-            }
-        } while (Voltar);
-    }
-
-    public static void Pesquisar()
-    {
-        boolean Voltar = true;
-        do{
-            System.out.println("\n       Pesquisar:    \n\n");
-            System.out.println("1 - Pesquisar Cliente.");
-            System.out.println("2 - Pesquisar Funcionário.");
-            System.out.println("3 - Pesquisar Cardapio.");
-            System.out.println("4 - Pesquisar Pedido.");
-            System.out.println("5 - Pesquisar Mesa.");
-            System.out.println("6 - Voltar.");
-
-            int opcao = scanner.nextInt();
-
-            switch (opcao)
-            {
-                case 1:
-                    cardapio.pesquisarPedido();
-                    break;
-                case 2:
-                    cardapio.pesquisarCliente();
-                    break;
-                case 3:
-                    cardapio.pesquisarFuncionario();
-                    break;
-                case 4:
-                    cardapio.pesquisarProduto();
-                    break;
-                case 5:
-                    System.out.println("5 - Pesquisar Mesa."); // sera?
-                    break;
-                case 6:
-                    System.out.println("6 - Voltar.");
-                    Voltar = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-            }
-        } while (Voltar);
-    }
+//    public static void Pesquisar()
+//    {
+//        boolean Voltar = true;
+//        do{
+//            System.out.println("\n       Pesquisar:    \n\n");
+//            System.out.println("1 - Pesquisar Cliente.");
+//            System.out.println("2 - Pesquisar Funcionário.");
+//            System.out.println("3 - Pesquisar Cardapio.");
+//            System.out.println("4 - Pesquisar Pedido.");
+//            System.out.println("5 - Pesquisar Mesa.");
+//            System.out.println("6 - Voltar.");
+//
+//            int opcao = scanner.nextInt();
+//
+//            switch (opcao)
+//            {
+//                case 1:
+//                    cardapio.pesquisarPedido();
+//                    break;
+//                case 2:
+//                    cardapio.pesquisarCliente();
+//                    break;
+//                case 3:
+//                    cardapio.pesquisarFuncionario();
+//                    break;
+//                case 4:
+//                    cardapio.pesquisarProduto();
+//                    break;
+//                case 5:
+//                    System.out.println("5 - Pesquisar Mesa."); // sera?
+//                    break;
+//                case 6:
+//                    System.out.println("6 - Voltar.");
+//                    Voltar = false;
+//                    break;
+//                default:
+//                    System.out.println("Opção inválida.");
+//            }
+//        } while (Voltar);
+//    }
 }

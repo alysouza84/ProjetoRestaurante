@@ -7,16 +7,16 @@ import java.util.Scanner;
 
 public class Cliente
 {
-    private static int count = 0;
-    private int id_cliente;
-    public String name;
-    public String telefone;
-    public String endereco;
-    public String email;
+    private static int idCount = 0;
+    private static int id_cliente;
+    public static String name;
+    public static String telefone;
+    public static String endereco;
+    public static String email;
 
     public Cliente(int id_cliente, String name, String telefone, String endereco, String email)
     {
-        this.id_cliente = ++count;
+        this.id_cliente = ++idCount;
         this.name = name;
         this.telefone = telefone;
         this.endereco = endereco;
@@ -25,14 +25,19 @@ public class Cliente
 
     public Cliente (String name, String telefone, String endereco, String email)
     {
+        this.id_cliente = ++idCount;
         this.name = name;
         this.telefone = telefone;
         this.endereco = endereco;
         this.email = email;
     }
 
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public static void setIdCount(int idCount) {
+        Cliente.idCount = idCount;
+    }
+
+    public int getId_cliente() {
+        return id_cliente;
     }
 
     public String getName() {
@@ -67,7 +72,8 @@ public class Cliente
         this.email = email;
     }
 
-    public static void cadastrarCliente(final Scanner scanner) throws IOException {
+    public static void cadastrarCliente(final Scanner scanner) throws IOException
+    {
         //Cria arquivo usando a classe FileManager;
         FileManager arquivo = new FileManager();
 
@@ -115,22 +121,43 @@ public class Cliente
         System.out.println();
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-        Cliente cliente = new Cliente(id_cliente, name, telefone, endereco, email);
+        Cliente cliente = new Cliente( name, telefone, endereco, email);
 
         FileManager.atualizaCliente(cliente);
     }
 
     //Função chamada em FileManager para imprimir os dados do cliente;
-    public void imprimirDadosClientes()
+    public static void imprimirDadosClientes()
     {
 
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-        System.out.println("ID: " + this.id_cliente);
-        System.out.println("Nome: " + this.name);
-        System.out.println("Telefone: " + this.telefone);
-        System.out.println("Endereço: " + this.endereco);
-        System.out.println("Email: " + this.email);
+        System.out.println("ID: " + id_cliente);
+        System.out.println("Nome: " + name);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Endereço: " + endereco);
+        System.out.println("Email: " + email);
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
     }
+
+    public static void deletarCliente(final Scanner scanner) throws IOException {
+        System.out.println("Digite o nome do cliente que deseja deletar: ");
+        String name = scanner.next();
+        FileManager.deletarCliente(name);
+    }
+
+    public static void buscarCliente(final Scanner scanner) throws IOException {
+        System.out.println("Digite o nome do cliente que deseja buscar: ");
+        String name = scanner.next();
+        FileManager.buscarCliente(name);
+    }
+
+    public static void listarClientes() throws IOException
+    {
+        FileManager arquivo = new FileManager();
+        arquivo.lerClientes();
+    }
+
+
 }
+

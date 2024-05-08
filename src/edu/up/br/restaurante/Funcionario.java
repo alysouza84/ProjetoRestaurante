@@ -14,7 +14,6 @@ public class Funcionario {
     public String cargo;
     public String salario;
 
-
     public Funcionario(String nome, String telefone, String endereco, String email, String cargo, String salario) {
         this.nome = nome;
         this.telefone = telefone;
@@ -85,8 +84,6 @@ public class Funcionario {
         arquivo.criarDiretorioGeral();
         arquivo.criarArquivoFuncionarios();
 
-        //eu trouxe o scanner da main para cá
-
         System.out.println("Digite o nome do funcionário: ");
         String nome = scanner.next();
         System.out.println("Digite o telefone do funcionário: ");
@@ -108,6 +105,51 @@ public class Funcionario {
 
     public void imprimirDadosFuncionarios()
     {
-
+        System.out.println("Nome: " + nome);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Endereço: " + endereco);
+        System.out.println("Email: " + email);
+        System.out.println("Cargo: " + cargo);
+        System.out.println("Salário: " + salario);
     }
+
+    public static void listarFuncionarios() throws IOException
+    {
+        FileManager arquivo = new FileManager();
+        arquivo.lerFuncionarios();
+    }
+
+    public static void pesquisarFuncionario(Scanner scanner)
+    {
+        System.out.println("Digite o nome do funcionário que deseja buscar: ");
+        String nome = scanner.next();
+        FileManager.buscarFuncionario(nome);
+    }
+
+    public static void removerFuncionario(Scanner scanner)
+    {
+        System.out.println("Digite o nome do funcionário que deseja remover: ");
+        String nome = scanner.next();
+        FileManager.deletarFuncionario(nome);
+    }
+
+    public static void atualizarFuncionario(Scanner scanner) throws IOException {
+        System.out.println("Digite o nome do funcionário que deseja atualizar: ");
+        String nome = scanner.next();
+        System.out.println("Digite o telefone do funcionário: ");
+        String telefone = scanner.next();
+        System.out.println("Digite o endereço do funcionário: ");
+        String endereco = scanner.next();
+        System.out.println("Digite o email do funcionário: ");
+        String email = scanner.next();
+        System.out.println("Digite o cargo do funcionário: ");
+        String cargo = scanner.next();
+        System.out.println("Digite o salário do funcionário: ");
+        String salario = scanner.next();
+
+        Funcionario funcionario = new Funcionario(nome, telefone, endereco, email, cargo, salario);
+
+        FileManager.atualizaFuncionario(funcionario);
+    }
+
 }
