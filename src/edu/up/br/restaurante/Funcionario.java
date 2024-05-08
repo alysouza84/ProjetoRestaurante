@@ -105,12 +105,14 @@ public class Funcionario {
 
     public void imprimirDadosFuncionarios()
     {
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Nome: " + nome);
         System.out.println("Telefone: " + telefone);
         System.out.println("Endereço: " + endereco);
         System.out.println("Email: " + email);
         System.out.println("Cargo: " + cargo);
         System.out.println("Salário: " + salario);
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
     }
 
     public static void listarFuncionarios() throws IOException

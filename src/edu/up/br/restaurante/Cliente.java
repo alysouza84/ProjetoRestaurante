@@ -86,11 +86,12 @@ public class Cliente
         //Solicita ao usuário que informe os dados do cliente;
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("Digite o nome do cliente: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.println("Digite o telefone do cliente: ");
         String telefone = scanner.next();
+        scanner.nextLine();
         System.out.println("Digite o endereço do cliente: ");
-        String endereco = scanner.next();
+        String endereco = scanner.nextLine();
         System.out.println("Digite o email do cliente: ");
         String email = scanner.next();
         System.out.println();
@@ -106,24 +107,43 @@ public class Cliente
 
     }
 
-    public static void atualizarCliente(final Scanner scanner) throws IOException {
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-        System.out.println("Digite o nome do cliente para atualizar: ");
-        String name = scanner.next();
+//    public static void atualizarCliente(final Scanner scanner) throws IOException {
+//        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//        System.out.println("Digite o nome do cliente para atualizar: ");
+//        String name = scanner.next();
+//        System.out.println("Digite o telefone do cliente: ");
+//        String telefone = scanner.next();
+//        System.out.println("Digite o endereço do cliente: ");
+//        String endereco = scanner.next();
+//        System.out.println("Digite o email do cliente: ");
+//        String email = scanner.next();
+//        System.out.println();
+//        System.out.println("Cliente cadastrado com sucesso!");
+//        System.out.println();
+//        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//
+//        Cliente cliente = new Cliente( name, telefone, endereco, email);
+//
+//        FileManager.atualizaCliente(cliente);
+//    }
+
+    public static void  atualizarCliente(final Scanner scanner) throws IOException
+    {
+        System.out.println("Digite o ID do cliente que deseja atualizar: ");
+        int id = scanner.nextInt();
+        System.out.println("Digite o nome do cliente: ");
+        String name = scanner.nextLine();
         System.out.println("Digite o telefone do cliente: ");
         String telefone = scanner.next();
+        scanner.nextLine();
         System.out.println("Digite o endereço do cliente: ");
-        String endereco = scanner.next();
+        String endereco = scanner.nextLine();
         System.out.println("Digite o email do cliente: ");
         String email = scanner.next();
-        System.out.println();
-        System.out.println("Cliente cadastrado com sucesso!");
-        System.out.println();
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-        Cliente cliente = new Cliente( name, telefone, endereco, email);
-
+        Cliente cliente = new Cliente(id, name, telefone, endereco, email);
         FileManager.atualizaCliente(cliente);
+
     }
 
     //Função chamada em FileManager para imprimir os dados do cliente;

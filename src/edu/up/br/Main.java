@@ -1,7 +1,6 @@
 package edu.up.br;
 
 import edu.up.br.restaurante.Cliente;
-import edu.up.br.restaurante.FileManager;
 import edu.up.br.restaurante.Funcionario;
 
 import java.io.IOException;
@@ -159,12 +158,13 @@ public class Main
         while(Voltar){
 //            System.out.print("\033[H\033[2J\033[3J");
 //            System.out.flush();
-            System.out.println("\n       Cadastros:    \n\n");
-            System.out.println("1 - Cadastrar Funcionario.");
-            System.out.println("2 - Atualizar Funcionario.");
-            System.out.println("3 - Excluir Funcionario.");
-            System.out.println("4 - Listar Funcionarios.");
-            System.out.println("5 - Voltar.");
+            System.out.println("\n-=-=-=-=-=Cadastro Funcionário:-=-=-=-=-=-=-\n\n");
+            System.out.println("1 - Cadastrar Funcionário.");
+            System.out.println("2 - Atualizar Funcionário.");
+            System.out.println("3 - Excluir Funcionário.");
+            System.out.println("4 - Listar Funcionários.");
+            System.out.println("5 - Pesquisar.");
+            System.out.println("6 - Voltar.");
 
             int opcao = scanner.nextInt();
 

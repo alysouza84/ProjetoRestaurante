@@ -371,4 +371,25 @@ public class FileManager {
         arquivoTemp.renameTo(arquivo);
     }
 
+    //Busca o nome do cliente a partir do ID.
+    public static String getClienteNameById(int id) {
+        File arquivo = new File(pathName, "clientes.txt");
+        try {
+            FileReader reader = new FileReader(arquivo);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] dados = line.split(";");
+                if (dados[0].equals(String.valueOf(id))) {
+                    return dados[1]; // Retorna o nome do cliente;
+                }
+            }
+            bufferedReader.close();
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Cliente não encontrado"; // Retorna a mensagem de cliente não encontrado;
+    }
+
 }
