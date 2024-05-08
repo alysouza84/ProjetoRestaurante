@@ -14,7 +14,7 @@ Projeto de Gerenciamento de Restaurante.
         - Cardápio: nome, descrição, tipo, preço.
             (Irá criar arquivo com os dados do cardápio, nome do arquivo cardapio.txt);
 
-        - Mesa: numero da mesa, status, pedido vinculado, quantidade de pessoas e reserva;
+        - Mesa: numero da mesa, status, pedido vinculado, quantidade de pessoas;
         (nao precisa de gerenciamento como cadastro, sera um valor fixo de mesas, ex 10;
 
         - Pedido: funcionario, mesa, comida e quantidade, bebida e quantidade.

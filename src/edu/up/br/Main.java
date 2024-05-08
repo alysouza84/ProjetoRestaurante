@@ -2,6 +2,7 @@ package edu.up.br;
 
 //import edu.up.br.restaurante.Cliente;
 import edu.up.br.restaurante.CardapioManager;
+import edu.up.br.restaurante.PedidoManager;
 //import edu.up.br.restaurante.FileManager;
 //import edu.up.br.restaurante.Funcionario;
 
@@ -36,9 +37,9 @@ public class Main
             int opcao = scanner.nextInt();
 
             switch (opcao) {
-//                case 1:
-//                    Pedidos();
-//                    break;
+                case 1:
+                    Pedidos();
+                    break;
 //                case 2:
 //                    Clientes();
 //                    break;
@@ -69,9 +70,9 @@ public class Main
 
     //metodo que chama os metodos de pedidos e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-   /* public static void Pedidos() throws IOException {
+   public static void Pedidos() throws IOException {
         boolean Voltar = true;
-        do{
+        while(Voltar){
             System.out.print("\033[H\033[2J\033[3J");
             System.out.flush();
             System.out.println("\n       Pedidos:    \n\n");
@@ -85,30 +86,30 @@ public class Main
             int opcao = scanner.nextInt();
 
             switch (opcao)
-//            {
-//                case 1:
-//                    Pedidos.cadastrarPedido(scanner);
-//                    break;
+            {
+                case 1:
+                    PedidoManager.adicionarPedido(scanner);
+                    break;
 //                case 2:
 //                    Pedidos.fecharConta();
 //                    break;
-//                case 3:
-//                    Pedidos.modificarPedido();
-//                    break;
-//                case 4:
-//                    Pedidos.cancelarPedido();
-//                    break;
+                case 3:
+                    PedidoManager.modificarPedido(scanner);
+                    break;
+                case 4:
+                    PedidoManager.removerPedido(scanner);
+                    break;
 //                case 5:
 //                    Pedidos.listarPedidos();
 //                    break;
-//                case 6:
-//                    Voltar = false;
-//                    break;
-//                default:
-//                    System.out.println("Opção inválida.");
-//            }
-//        } while (Voltar);
-    }*/
+                case 6:
+                    Voltar = false;
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        }
+    }
 
 
     //metodo que chama os metodos de cadastros e manda para o gerenciamento a requisição

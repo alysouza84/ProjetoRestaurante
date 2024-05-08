@@ -412,4 +412,15 @@ public class CardapioManager
         }
         return maior;
     }
+    public static Cardapio buscarItem(int id){
+        getCardapios();
+        for (Cardapio cardapio : cardapios)
+        {
+            if(cardapio.getId() == id)
+            {
+                return cardapio;
+            }
+        }
+        return null;
+    }
 }
