@@ -1,0 +1,2 @@
+Cardapio{id=1, nome='macarrao dois', descricao='top do top', tipo='Gostoso', preco=59.9}
+Cardapio{id=2, nome='macarrao novo dois', descricao='teste', tipo='teste', preco=19.99}

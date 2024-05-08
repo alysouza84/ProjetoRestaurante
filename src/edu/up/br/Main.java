@@ -1,9 +1,9 @@
 package edu.up.br;
 
-import edu.up.br.restaurante.Cardapio;
-import edu.up.br.restaurante.Cliente;
-import edu.up.br.restaurante.FileManager;
-import edu.up.br.restaurante.Funcionario;
+//import edu.up.br.restaurante.Cliente;
+import edu.up.br.restaurante.CardapioManager;
+//import edu.up.br.restaurante.FileManager;
+//import edu.up.br.restaurante.Funcionario;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -18,7 +18,7 @@ public class Main
         // pedidos, cadastros, listagem e pesquisar;
         boolean sair = true;
 
-        do {
+        while(sair){
             System.out.print("\033[H\033[2J\033[3J");
             System.out.flush();
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
@@ -36,18 +36,18 @@ public class Main
             int opcao = scanner.nextInt();
 
             switch (opcao) {
-                case 1:
-                    Pedidos();
-                    break;
-                case 2:
+//                case 1:
+//                    Pedidos();
+//                    break;
+//                case 2:
 //                    Clientes();
 //                    break;
 //                case 3:
 //                    Funcionarios();
 //                    break;
-//                case 4:
-//                    Cardapios();
-//                    break;
+                case 4:
+                    Cardapios();
+                    break;
 //                case 5:
 //                    Listagem();
 //                    break;
@@ -55,13 +55,13 @@ public class Main
 //                    Pesquisar();
 //                    break;
                 case 7:
-                    System.out.println("5 - Sair.");
+                    System.out.println("7 - Sair.");
                     sair = false;
                     break;
                 default:
                     System.out.println("Opção inválida.");
             }
-        } while (!sair);
+        }
 
         scanner.close();
 
@@ -69,7 +69,7 @@ public class Main
 
     //metodo que chama os metodos de pedidos e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-    public static void Pedidos() throws IOException {
+   /* public static void Pedidos() throws IOException {
         boolean Voltar = true;
         do{
             System.out.print("\033[H\033[2J\033[3J");
@@ -108,12 +108,12 @@ public class Main
 //                    System.out.println("Opção inválida.");
 //            }
 //        } while (Voltar);
-    }
+    }*/
 
 
     //metodo que chama os metodos de cadastros e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-    public static void Clientes() throws IOException {
+    /*public static void Clientes() throws IOException {
         boolean Voltar = true;
         do{
             System.out.print("\033[H\033[2J\033[3J");
@@ -151,9 +151,9 @@ public class Main
                     System.out.println("Opção inválida.");
             }
         } while (Voltar);
-    }
+    }*/
 
-    public static void Funcionarios() throws IOException {
+    /*public static void Funcionarios() throws IOException {
         boolean Voltar = true;
         do{
             System.out.print("\033[H\033[2J\033[3J");
@@ -191,36 +191,42 @@ public class Main
                     System.out.println("Opção inválida.");
             }
         } while (Voltar);
-    }
+    }*/
 
+
+    //todas as chamadas sao feita para cardapioManager
     public static void Cardapios(){
         boolean Voltar = true;
-        do{
+        while(Voltar){
+            System.out.print("\033[H\033[2J\033[3J"); // codigo ANSI e "limpar" tela no terminal
+            System.out.flush();
             System.out.println("\n       Cardapio:    \n\n");
             System.out.println("1 - Cadastrar Prato.");
             System.out.println("2 - Atualizar Prato.");
             System.out.println("3 - Excluir Prato.");
             System.out.println("4 - Listar Pratos.");
-            System.out.println("5 - Voltar.");
+            System.out.println("5 - Pesquisar Prato.");
+            System.out.println("6 - Voltar.");
 
             int opcao = scanner.nextInt();
+            scanner.nextLine();//limpar buffer
 
             switch (opcao)
             {
                 case 1:
-                    Cardapio.cadastrarProduto(scanner);
+                    CardapioManager.cadastrarProduto(scanner);
                     break;
                 case 2:
-                    Cardapio.removerProduto();
+                    CardapioManager.modificarProduto(scanner);
                     break;
                 case 3:
-                    Cardapio.modificarProduto();
+                    CardapioManager.removerProduto(scanner);
                     break;
                 case 4:
-                    Cardapio.listarProdutos();
+                    CardapioManager.listar(scanner);
                     break;
                 case 5:
-                    Cardapio.pesquisarProduto();
+                    CardapioManager.pesquisarProduto(scanner);
                     break;
                 case 6:
                     Voltar = false;
@@ -228,12 +234,12 @@ public class Main
                 default:
                     System.out.println("Opção inválida.");
             }
-        } while (Voltar);
+        }
     }
 
     //metodo que chama os metodos de listagem e manda para o gerenciamento a requisição
     //de acordo com a opção escolhida
-    public static void Listagem()
+    /*public static void Listagem()
     {
         boolean Voltar = true;
         do{
@@ -272,9 +278,9 @@ public class Main
                     System.out.println("Opção inválida.");
             }
         } while (Voltar);
-    }
+    }*/
 
-    public static void Pesquisar()
+    /*public static void Pesquisar()
     {
         boolean Voltar = true;
         do{
@@ -313,5 +319,5 @@ public class Main
                     System.out.println("Opção inválida.");
             }
         } while (Voltar);
-    }
+    }*/
 }
