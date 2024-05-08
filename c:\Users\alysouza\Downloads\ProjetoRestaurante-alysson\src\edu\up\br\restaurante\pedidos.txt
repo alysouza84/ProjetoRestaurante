@@ -1,0 +1,3 @@
+Pedido{idPedido=0, mesa=6, idFuncionario=5, itens=3;2, quantidades=2;1}
+Pedido{idPedido=0, mesa=5, idFuncionario=5, itens=2;2, quantidades=4;6}
+Pedido{idPedido=0, mesa=4, idFuncionario=6, itens=1;1, quantidades=2;2}
