@@ -32,6 +32,7 @@ public class Main
             System.out.println("5 - Listagem.");
             System.out.println("6 - Pesquisar.");
             System.out.println("7 - Sair.");
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
             int opcao = scanner.nextInt();
 
