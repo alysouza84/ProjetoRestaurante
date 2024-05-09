@@ -1,0 +1,10 @@
+Mesa{NumeroMesa=1, status=false, pedido=0}
+Mesa{NumeroMesa=2, status=false, pedido=0}
+Mesa{NumeroMesa=3, status=false, pedido=0}
+Mesa{NumeroMesa=4, status=false, pedido=0}
+Mesa{NumeroMesa=5, status=false, pedido=0}
+Mesa{NumeroMesa=6, status=false, pedido=0}
+Mesa{NumeroMesa=7, status=false, pedido=0}
+Mesa{NumeroMesa=8, status=false, pedido=0}
+Mesa{NumeroMesa=9, status=false, pedido=0}
+Mesa{NumeroMesa=10, status=false, pedido=0}
